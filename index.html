@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wOrkee | Nomad Work Redefined</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; font-family: 'Montserrat', sans-serif; }
+
+        .hero {
+            width: 100vw;
+            height: 100vh;
+            background: url('https://w0rkee.wordpress.com/wp-content/uploads/2026/04/w0rkee-69d296f81096e.png') no-repeat center center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .overlay {
+            background: rgba(0, 107, 107, 0.25);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 50px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            text-align: center;
+            max-width: 900px;
+            width: 90%;
+        }
+
+        h1 {
+            color: white;
+            font-size: clamp(1.5rem, 6vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .btn {
+            border: 2px solid white;
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            transition: 0.3s all ease;
+        }
+
+        .btn:hover {
+            background: white;
+            color: #006B6B;
+            box-shadow: 0 0 20px rgba(255,255,255,0.4);
+        }
+
+        @media (max-width: 700px) {
+            .menu-grid { grid-template-columns: 1fr 1fr; }
+            .overlay { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="overlay">
+        <h1>NOMAD WORK REDEFINED</h1>
+        <div class="menu-grid">
+            <a href="#" class="btn">Chi Siamo</a>
+            <a href="#" class="btn">Come Funziona</a>
+            <a href="#" class="btn">Q&A</a>
+            <a href="#" class="btn">Contatti</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

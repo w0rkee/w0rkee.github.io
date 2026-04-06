@@ -11,15 +11,17 @@
         body, html { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: #f4f4f4; scroll-behavior: smooth; }
 
         /* HERO SECTION */
-        .hero {
-            width: 100vw; height: 100vh; margin: 0;
-            background: url('img/hero_w0rkee_smartworking_palermo-oriz2.png') no-repeat center center;
-            background-position: top center;
-            background-size: contain;
-            background-color: #0b4c4c;
-            display: flex; align-items: flex-start; justify-content: center; 
-            padding-top: 40px; /* Regola l'altezza da qui */
-        }
+.hero {
+    width: 100vw; 
+    height: 100vh; 
+    margin: 0;
+    background: url('img/hero_w0rkee_smartworking_palermo-oriz2.png') no-repeat;
+    background-position: top center;
+    background-size: cover; /* Cambiato in cover per evitare che si restringa */
+    background-color: #0b4c4c;
+    position: relative; /* Necessario per l'overlay assoluto */
+    overflow: hidden;
+}
 
         /* STILE LOGO CODE-BASED */
 .logo-container {
@@ -68,8 +70,15 @@
 }
 
         .overlay {
-            background: transparent; text-align: center; width: auto; max-width: 900px;
-        }
+    position: absolute;
+    top: 2%;            /* Cambiato a 2% per mandarlo vicinissimo al bordo alto */
+    left: 50%;
+    transform: translateX(-50%); 
+    text-align: center; 
+    width: 100%;
+    max-width: 900px;
+    z-index: 10;
+}
 
         h1 { color: white; font-size: clamp(1.2rem, 4vw, 2rem); margin-bottom: 30px; text-transform: uppercase; opacity: 0.9; }
 

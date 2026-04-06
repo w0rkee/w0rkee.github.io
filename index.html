@@ -11,76 +11,99 @@
         body, html { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: #f4f4f4; scroll-behavior: smooth; }
 
         /* HERO SECTION */
-.hero {
-    width: 100vw; 
-    height: 100vh; 
-    margin: 0;
-    background: url('img/hero_w0rkee_smartworking_palermo-oriz2.png') no-repeat;
-    background-position: top center;
-    background-size: cover; /* Cambiato in cover per evitare che si restringa */
-    background-color: #0b4c4c;
-    position: relative; /* Necessario per l'overlay assoluto */
-    overflow: hidden;
-}
+        .hero {
+            width: 100vw; 
+            height: 100vh; 
+            margin: 0;
+            background: url('img/hero_w0rkee_smartworking_palermo-oriz2.png') no-repeat;
+            background-position: top center;
+            background-size: cover;
+            background-color: #0b4c4c;
+            position: relative; 
+            overflow: hidden;
+        }
 
-        /* STILE LOGO CODE-BASED */
-.logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 20px;
-    position: relative;
-}
-
-/* Stile per la scritta curva */
-.nomad-svg {
-    overflow: visible;
-    margin-bottom: -15px; /* Avvicina l'arco alla scritta sotto */
-}
-
-.nomad-text {
-    fill: white;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 16px; /* Regola la grandezza del testo nell'arco */
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.workee-main {
-    font-size: 4rem;
-    font-weight: 700;
-    color: white;
-    letter-spacing: -2px;
-    line-height: 1;
-}
-
-/* Resto del codice della "O" con il pin... */
-.workee-main span { position: relative; display: inline-block; }
-.workee-main span::after {
-    content: '';
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 12px;
-    height: 12px;
-    background: white;
-    clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
-}
-
+        /* OVERLAY POSIZIONATO IN ALTO */
         .overlay {
-    position: absolute;
-    top: 2%;            /* Cambiato a 2% per mandarlo vicinissimo al bordo alto */
-    left: 50%;
-    transform: translateX(-50%); 
-    text-align: center; 
-    width: 100%;
-    max-width: 900px;
-    z-index: 10;
-}
+            position: absolute;
+            top: 2%; /* Sposta tutto il blocco verso l'alto */
+            left: 50%;
+            transform: translateX(-50%); 
+            text-align: center; 
+            width: 90%;
+            max-width: 900px;
+            z-index: 10;
+        }
 
-        h1 { color: white; font-size: clamp(1.2rem, 4vw, 2rem); margin-bottom: 30px; text-transform: uppercase; opacity: 0.9; }
+        /* LOGO CONTAINER */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        /* SCRITTA AD ARCO */
+        .nomad-svg {
+            overflow: visible;
+            margin-bottom: -20px; /* Avvicina l'arco alla scritta workee */
+        }
+
+        .nomad-text {
+            fill: white;
+            font-weight: 700;
+            font-size: 16px; 
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        /* WORKEE MAIN CON PIN */
+        .workee-main {
+            font-size: clamp(3rem, 10vw, 4.5rem);
+            font-weight: 700;
+            color: white;
+            letter-spacing: -2px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* PIN ICONA PULITA (Sostituisce la O) */
+        .pin-icon-container {
+            display: inline-block;
+            width: 0.8em;  
+            height: 0.8em; 
+            background-color: white;
+            margin: 0 0.05em;
+            position: relative;
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            top: 0.05em; 
+        }
+
+        /* Buco interno del pin */
+        .pin-icon-container::after {
+            content: '';
+            position: absolute;
+            width: 35%;
+            height: 35%;
+            background-color: #0b4c4c; 
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        h1 { 
+            color: white; 
+            font-size: clamp(1rem, 3vw, 1.5rem); 
+            margin-bottom: 25px; 
+            text-transform: uppercase; 
+            opacity: 0.9; 
+            letter-spacing: 2px;
+        }
 
         /* MENU NAVIGAZIONE HERO */
         .menu-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
@@ -97,7 +120,7 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s;
         }
         .locale-card:hover { transform: translateY(-10px); }
-        .locale-img { width: 100%; height: 200px; background: #ccc; object-fit: cover; }
+        .locale-img { width: 100%; height: 200px; background: #ccc; background-size: cover; }
         .locale-info { padding: 20px; text-align: left; }
         .locale-info h3 { margin: 0; color: var(--ottanio); font-size: 1.2rem; }
         .locale-info p { font-size: 0.9rem; color: #666; margin: 10px 0; }
@@ -107,24 +130,32 @@
             color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.8rem;
         }
 
-        @media (max-width: 700px) { .menu-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 700px) { 
+            .menu-grid { grid-template-columns: 1fr 1fr; } 
+            .overlay { top: 5%; }
+        }
     </style>
 </head>
 
 <body>
- <div class="hero">
+
+<div class="hero">
     <div class="overlay">
+        
         <div class="logo-container">
-    <svg viewBox="0 0 200 70" width="250" height="90" class="nomad-svg">
-        <path id="curve" d="M 30,60 Q 100,0 170,60" fill="transparent" />
-        <text>
-            <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" class="nomad-text">
-                NOMAD WORK
-            </textPath>
-        </text>
-    </svg>
-    <div class="workee-main">w<span>O</span>rkee</div>
-</div> 
+            <svg viewBox="0 0 200 70" width="220" height="80" class="nomad-svg">
+                <path id="curve" d="M 30,60 Q 100,0 170,60" fill="transparent" />
+                <text>
+                    <textPath xlink:href="#curve" startOffset="50%" text-anchor="middle" class="nomad-text">
+                        NOMAD WORK
+                    </textPath>
+                </text>
+            </svg>
+            
+            <div class="workee-main">
+                w<span class="pin-icon-container"></span>rkee
+            </div>
+        </div>
 
         <h1>NOMAD WORK REDEFINED</h1>
 
@@ -134,21 +165,19 @@
             <a href="#" class="btn-nav">Q&A</a>
             <a href="#" class="btn-nav">Contatti</a>
         </div>
-    </div>
-</div>
 
-<div id="locali" class="grid-section">
+    </div> </div> <div id="locali" class="grid-section">
     <h2 class="grid-title">Scegli la tua postazione</h2>
     <div class="locali-grid">
         <div class="locale-card">
-            <div class="locale-img" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=500'); background-size: cover;"></div>
+            <div class="locale-img" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=500');"></div>
             <div class="locale-info">
                 <h3>Nome Locale 1</h3>
                 <p>Zona Centro - Wi-Fi Alta Velocità - Prese elettriche dedicate.</p>
                 <a href="locale-1.html" class="btn-info">ESPLORA L'AMBIENTE</a>
             </div>
         </div>
-        </div>
+    </div>
 </div>
 
 </body>

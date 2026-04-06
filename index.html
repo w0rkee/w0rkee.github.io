@@ -17,15 +17,63 @@
             background-position: top center;
             background-size: contain;
             background-color: #0b4c4c;
-            display: flex; align-items: flex-start; justify-content: center; padding-top: 200px;
+            display: flex; align-items: flex-start; justify-content: center; 
+            padding-top: 150px; /* Regola l'altezza da qui */
         }
-        .overlay {
-            background: transparent; backdrop-filter: none; 
-            padding: 0px; border: none; text-align: center; width: auto; max-width: 900px;
-        }
-        h1 { color: white; font-size: clamp(1.5rem, 6vw, 3rem); margin-bottom: 30px; text-transform: uppercase; }
 
-       
+        /* STILE LOGO CODE-BASED */
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .nomad-arc {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: -5px;
+            transform: scaleX(1.1);
+        }
+
+        .workee-main {
+            font-size: 4rem;
+            font-weight: 700;
+            color: white;
+            letter-spacing: -2px;
+            position: relative;
+        }
+
+        .workee-main span {
+            display: inline-block;
+            position: relative;
+        }
+
+        .workee-main span::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 12px;
+            background: white;
+            clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+        }
+
+        .overlay {
+            background: transparent; text-align: center; width: auto; max-width: 900px;
+        }
+
+        h1 { color: white; font-size: clamp(1.2rem, 4vw, 2rem); margin-bottom: 30px; text-transform: uppercase; opacity: 0.9; }
+
+        /* MENU NAVIGAZIONE HERO */
+        .menu-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .btn-nav { border: 2px solid white; padding: 12px; color: white; text-decoration: none; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; transition: 0.3s; }
+        .btn-nav:hover { background: white; color: var(--ottanio); }
 
         /* GRIGLIA LOCALI */
         .grid-section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
@@ -47,10 +95,6 @@
             color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.8rem;
         }
 
-        .menu-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-        .btn-nav { border: 2px solid white; padding: 12px; color: white; text-decoration: none; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; transition: 0.3s; }
-        .btn-nav:hover { background: white; color: var(--ottanio); }
-
         @media (max-width: 700px) { .menu-grid { grid-template-columns: 1fr 1fr; } }
     </style>
 </head>
@@ -58,7 +102,13 @@
 
 <div class="hero">
     <div class="overlay">
+        <div class="logo-container">
+            <div class="nomad-arc">NOMAD WORK</div>
+            <div class="workee-main">w<span>O</span>rkee</div>
+        </div>
+
         <h1>NOMAD WORK REDEFINED</h1>
+
         <div class="menu-grid">
             <a href="#" class="btn-nav">come funziona</a>
             <a href="#locali" class="btn-nav">Locali</a>
@@ -68,11 +118,9 @@
     </div>
 </div>
 
-
 <div id="locali" class="grid-section">
     <h2 class="grid-title">Scegli la tua postazione</h2>
     <div class="locali-grid">
-        
         <div class="locale-card">
             <div class="locale-img" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=500'); background-size: cover;"></div>
             <div class="locale-info">
@@ -81,26 +129,7 @@
                 <a href="locale-1.html" class="btn-info">ESPLORA L'AMBIENTE</a>
             </div>
         </div>
-
-        <div class="locale-card">
-            <div class="locale-img" style="background-image: url('https://images.unsplash.com/photo-1559925393-8be0ec418cd9?q=80&w=500'); background-size: cover;"></div>
-            <div class="locale-info">
-                <h3>Nome Locale 2</h3>
-                <p>Zona Libertà - Ambiente silenzioso - Coffee Break incluso.</p>
-                <a href="#" class="btn-info">ESPLORA L'AMBIENTE</a>
-            </div>
         </div>
-
-        <div class="locale-card">
-            <div class="locale-img" style="background-image: url('https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=500'); background-size: cover;"></div>
-            <div class="locale-info">
-                <h3>Nome Locale 3</h3>
-                <p>Zona Mondello - Vista mare - Ideale per smart working estivo.</p>
-                <a href="#" class="btn-info">ESPLORA L'AMBIENTE</a>
-            </div>
-        </div>
-    </div>
-
 </div>
 
 </body>

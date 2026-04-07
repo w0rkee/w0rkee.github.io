@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q&A | wOrkee</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+        
+        :root { --ottanio: #006B6B; }
+        body { font-family: 'Montserrat', sans-serif; margin: 0; color: #333; background: #f4f4f4; line-height: 1.6; }
+
+        /* HEADER */
+        .header-small { 
+            height: 25vh; 
+            background: linear-gradient(rgba(0,107,107,0.8), rgba(0,107,107,0.8)), url('img/hero_w0rkee_smartworking_palermo-oriz2.png') center/cover; 
+            display: flex; align-items: center; justify-content: center; color: white; text-align: center;
+        }
+
+        .container { max-width: 800px; margin: -40px auto 60px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--ottanio); text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 0.8rem; }
+        
+        h1 { color: var(--ottanio); text-transform: uppercase; margin-bottom: 30px; text-align: center; }
+
+        /* FAQ STYLE */
+        .faq-item { border-bottom: 1px solid #eee; padding: 25px 0; }
+        .faq-item:last-child { border-bottom: none; }
+        
+        .faq-question { 
+            font-weight: 700; 
+            color: var(--ottanio); 
+            margin-bottom: 10px; 
+            display: block;
+            font-size: 1.1rem;
+        }
+        
+        .faq-answer { color: #555; font-size: 0.95rem; text-align: justify; }
+
+        .cta-footer { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; }
+        .btn-contact { 
+            display: inline-block;
+            color: var(--ottanio); 
+            font-weight: bold; 
+            text-decoration: none; 
+            border: 2px solid var(--ottanio); 
+            padding: 12px 25px; 
+            border-radius: 5px; 
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        .btn-contact:hover { background: var(--ottanio); color: white; }
+
+        @media (max-width: 600px) { .container { width: 90%; padding: 20px; } }
+    </style>
+</head>
+<body>
+
+<div class="header-small">
+    <h2 style="text-transform: uppercase; letter-spacing: 2px;">Domande Frequenti</h2>
+</div>
+
+<div class="container">
+    <a href="index.html" class="back-link">← Torna alla Home</a>
+    
+    <h1>Q&A</h1>
+
+    <div class="faq-list">
+        
+        <div class="faq-item">
+            <span class="faq-question">1. Come posso prenotare una sessione?</span>
+            <div class="faq-answer">Seleziona il locale che preferisci, scegli un giorno dal calendario e clicca sullo slot desiderato (mattina o pomeriggio). Compila il modulo, procedi al pagamento e la tua postazione sarà riservata istantaneamente.</div>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">2. Posso prenotare per l'intera giornata?</span>
+            <div class="faq-answer">Certamente! I nostri slot standard durano 4 ore (mezza giornata). Se vuoi restare tutto il giorno, ti basta effettuare due prenotazioni separate (una per la mattina e una per il pomeriggio) per lo stesso locale.</div>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">3. Cosa riceverò dopo la prenotazione?</span>
+            <div class="faq-answer">Riceverai un'e-mail di conferma immediata con tutti i dettagli necessari e le istruzioni per il tuo arrivo.</div>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">4. Come si effettua il check-in al locale?</span>
+            <div class="faq-answer">Una volta arrivato, mostra l'e-mail di conferma al personale. Scansiona il QR code del locale, inserisci la tua e-mail di prenotazione e il gestore convaliderà il tuo ingresso con un codice. Da quel momento potrai iniziare a lavorare e goderti la tua consumazione inclusa.</div>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">5. Devo fare il check-in due volte se resto mattina e pomeriggio?</span>
+            <div class="faq-answer">Sì, è necessario effettuare due check-in: uno all'arrivo al mattino e il secondo all'inizio della sessione pomeridiana (dopo le 14:30/15:30).</div>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">6. Offrite abbonamenti mensili o piani aziendali?</span>
+            <div class="faq-answer">Stiamo lavorando per creare opzioni su misura per la nostra community. Se hai bisogno di un pass mensile o di un piano personalizzato per il tuo team, contattaci direttamente e troveremo la soluzione ideale per te.</div>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">7. Cosa è incluso nella mia postazione wOrkee?</span>
+            <div class="faq-answer">Wi-Fi ad alta velocità, caffè (o consumazione) di benvenuto, tavolo riservato, accesso alle prese elettriche e sconti esclusivi sul menù del locale.</div>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">8. Cosa devo portare con me?</span>
+            <div class="faq-answer">Porta con te l'e-mail di conferma (digitale), le tue cuffie per call o video e il tuo laptop. Al resto pensiamo noi!</div>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">9. Qual è la "wOrkee Etiquette"?</span>
+            <div class="faq-answer">Utilizza sempre le cuffie, rispetta la quiete degli altri lavoratori e il lavoro dello staff del locale. Ricorda che wOrkee è un ufficio condiviso basato sul rispetto reciproco.</div>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">10. Quali sono gli orari di ingresso e uscita?</span>
+            <div class="faq-answer">Slot Mattina: dall'apertura fino alle 13:00 circa. Slot Pomeriggio: dalle 14:30/15:30 fino all'orario di chiusura smart working del locale (solitamente 18:30/19:00). Oltre questi orari, potrai restare come cliente standard del locale effettuando consumazioni extra.</div>
+        </div>
+
+        <div class="faq-item">
+            <span class="faq-question">11. Posso cancellare la mia prenotazione?</span>
+            <div class="faq-answer">Sì, puoi cancellare la tua sessione con un preavviso minimo di 48 ore rispetto all'orario di inizio prenotato.</div>
+        </div>
+
+    </div>
+
+    <div class="cta-footer">
+        <p>Non hai trovato la risposta che cercavi?</p>
+        <a href="contatti.html" class="btn-contact">Contattaci direttamente</a>
+    </div>
+</div>
+
+</body>
+</html>

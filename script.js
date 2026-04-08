@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Rende il testo più compatto
         var gadgetText = document.querySelector('.goog-te-menu-value span:first-child');
-        if (gadgetText && (gadgetText.innerText === 'Seleziona Lingua' || gadgetText.innerText === 'Select Language')) {
+        if (gadgetText && (gadgetText.innerText === 'Seleziona lingua' || gadgetText.innerText === 'Select Language')) {
             gadgetText.innerText = 'LINGUA'; 
         }
     });

@@ -1,14 +1,14 @@
-/* FUNZIONE PER INIZIALIZZARE GOOGLE TRANSLATE */
+/* 1. INIZIALIZZAZIONE GOOGLE TRANSLATE */
 function googleTranslateElementInit() {
     new google.translate.TranslateElement({
-        pageLanguage: 'it', // Lingua originale del tuo sito
-        includedLanguages: 'en,fr,es,de', // Lingue in cui vuoi tradurre
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-        autoDisplay: false // Evita che appaia la barra in alto automaticamente
+        pageLanguage: 'it', 
+        includedLanguages: 'en,fr,es,de', 
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE, // <-- La virgola qui è fondamentale!
+        autoDisplay: false 
     }, 'google_translate_element');
 }
 
-/* CARICAMENTO DELLO SCRIPT DI GOOGLE */
+/* 2. CARICAMENTO DELLO SCRIPT DI GOOGLE */
 (function() {
     var gt = document.createElement('script');
     gt.type = 'text/javascript';
@@ -18,7 +18,7 @@ function googleTranslateElementInit() {
     s.parentNode.insertBefore(gt, s);
 })();
 
-/* 3. PULIZIA LAYOUT */
+/* 3. PULIZIA LAYOUT E CAMBIO TESTO */
 document.addEventListener('DOMContentLoaded', function() {
     var observer = new MutationObserver(function(mutations) {
         // Rimuove la barra superiore
@@ -30,10 +30,15 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.top = '0px';
         }
 
-        // Rende il testo più compatto
+        // Cambia il testo "Seleziona lingua" in "LINGUA"
         var gadgetText = document.querySelector('.goog-te-menu-value span:first-child');
-        if (gadgetText && (gadgetText.innerText === 'Seleziona lingua' || gadgetText.innerText === 'Select Language')) {
-            gadgetText.innerText = 'LINGUA'; 
+        if (gadgetText) {
+            // Controlliamo se contiene le scritte standard di Google
+            if (gadgetText.innerText.trim() === 'Seleziona lingua' || 
+                gadgetText.innerText.trim() === 'Select Language' || 
+                gadgetText.innerText.trim() === 'Seleccionar idioma') {
+                gadgetText.innerText = 'LINGUA'; 
+            }
         }
     });
 

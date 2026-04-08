@@ -170,12 +170,6 @@ body { top: 0 !important; position: static !important; }
 <body>
 
 <div id="google_translate_element"></div>
-<script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'it', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-    }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 <div class="hero">
     <div class="overlay">
@@ -188,14 +182,11 @@ body { top: 0 !important; position: static !important; }
                     </textPath>
                 </text>
             </svg>
-            
             <div class="workee-main">
                 w<span class="pin-icon-container"></span>rkee
             </div>
         </div>
-
         <h1>REDEFINED</h1>
-
         <div class="menu-grid">
             <a href="come-funziona.html" class="btn-nav">come funziona</a>
             <a href="#locali" class="btn-nav">Locali</a>
@@ -206,61 +197,30 @@ body { top: 0 !important; position: static !important; }
 </div> 
 
 <div id="locali" class="grid-section">
-    <h2 class="grid-title">Scegli la tua postazione</h2>
-    <div class="locali-grid">
-        
-        <div class="locale-card">
-            <div class="locale-img" style="background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=500');"></div>
-            <div class="locale-info">
-                <h3>Nome Locale 1</h3>
-                <p>Zona Centro - Wi-Fi Alta Velocità - Prese elettriche dedicate.</p>
-                <a href="locale-1.html" class="btn-info">ESPLORA L'AMBIENTE</a>
-            </div>
-        </div>
-
-        <div class="locale-card">
-            <div class="locale-img" style="background-image: url('https://images.unsplash.com/photo-1559925393-8be0ec41b50b?q=80&w=500');"></div>
-            <div class="locale-info">
-                <h3>Nome Locale 2</h3>
-                <p>Zona Porto - Atmosfera accogliente - Ottimo caffè.</p>
-                <a href="#" class="btn-info">ESPLORA L'AMBIENTE</a>
-            </div>
-        </div>
-
-        <div class="locale-card">
-            <div class="locale-img" style="background-image: url('https://images.unsplash.com/photo-1521017432531-fbd92d744264?q=80&w=500');"></div>
-            <div class="locale-info">
-                <h3>Nome Locale 3</h3>
-                <p>Zona Residenziale - Silenzioso - Adatto a lunghe sessioni.</p>
-                <a href="#" class="btn-info">ESPLORA L'AMBIENTE</a>
-            </div>
-        </div>
-
     </div>
-</div>
 
-<div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 600px; background: rgba(0, 107, 107, 0.95); color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; display: none; text-align: center; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
-    <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.5;">
-        Utilizziamo i cookie per migliorare la tua esperienza e per le prenotazioni. Continuando a navigare, accetti la nostra privacy policy.
-    </p>
-    <button onclick="acceptCookies()" style="background: white; color: #006b6b; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; text-transform: uppercase; transition: 0.3s;">Accetto</button>
-</div>
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'it', 
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+        }, 'google_translate_element');
+    }
 
-<script>
-    // cookie: Funzione per mostrare il banner se non è già stato accettato
-    window.onload = function() {
+    // Gestione Cookie e avvio pulito
+    window.addEventListener('load', function() {
         if (!localStorage.getItem('w0rkee_cookies_accepted')) {
             document.getElementById('cookie-banner').style.display = 'block';
         }
-    }
+    });
 
-    // cookie: Funzione per nascondere il banner e salvare la scelta
     function acceptCookies() {
         localStorage.setItem('w0rkee_cookies_accepted', 'true');
         document.getElementById('cookie-banner').style.display = 'none';
     }
 </script>
 
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script src="script.js"></script>
 
 </body>

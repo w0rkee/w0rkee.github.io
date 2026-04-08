@@ -4,66 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bar Le Terrazze | wOrkee Palermo</title>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        /* 1. Reset e Font */
         body { font-family: 'Montserrat', sans-serif; margin: 0; color: #333; background: #f9f9f9; }
-        .header-locale { height: 40vh; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=500') center/cover; background-attachment: fixed; }
-        .container { max-width: 900px; margin: -80px auto 60px; background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.1); position: relative; z-index: 2; }
+
+        /* 2. Header (Immagine Grande Iniziale) */
+        .header-locale { 
+            height: 40vh; 
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=500') center/cover; 
+            background-attachment: fixed; 
+        }
+
+        /* 3. Contenitore Principale */
+        .container { 
+            max-width: 900px; 
+            margin: -80px auto 60px; 
+            background: white; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 15px 50px rgba(0,0,0,0.1); 
+            position: relative; 
+            z-index: 2; 
+        }
+
+        /* 4. Testi e Titoli */
         .info-tag { display: inline-block; background: #e0f2f2; color: #006B6B; padding: 6px 15px; border-radius: 30px; font-size: 0.7rem; font-weight: 700; margin-bottom: 15px; text-transform: uppercase; }
         h1 { color: #006B6B; text-transform: uppercase; margin: 0 0 20px 0; font-size: 2.5rem; }
         p { line-height: 1.8; color: #666; font-size: 1.05rem; }
+
+        /* 5. Griglia Servizi (Cosa include) */
         .services-grid { margin: 40px 0; padding: 30px; background: #fdfdfd; border-radius: 15px; border: 1px solid #eee; }
         .services-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; list-style: none; padding: 0; margin: 0; }
         .services-list li { font-size: 0.95rem; display: flex; align-items: center; }
         .services-list li::before { content: "●"; color: #006B6B; font-size: 1.2rem; margin-right: 12px; }
+
+        /* 6. Galleria Fotografica */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 30px 0; }
+        .gallery-grid a img { width: 100%; height: 150px; object-fit: cover; border-radius: 10px; transition: transform 0.3s; }
+        .gallery-grid a:hover img { transform: scale(1.05); }
+
+        /* 7. Mappa e Posizione */
         .map-wrapper { width: 100%; height: 180px; border-radius: 15px; overflow: hidden; border: 1px solid #eee; margin-top: 15px; }
         .address-link { display: inline-block; margin-bottom: 10px; color: #006B6B; text-decoration: none; font-weight: 700; }
+
+        /* 8. Sezione Prenotazione */
         .booking-section { margin-top: 50px; padding-top: 40px; border-top: 2px solid #f0f0f0; text-align: center; }
         .tidycal-container { width: 100%; height: 800px; margin-top: 20px; }
     </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
 </head>
+
 <body>
+
     <div class="header-locale"></div>
+
     <div class="container">
+        
         <a href="index.html" style="color:#006B6B; text-decoration:none; font-weight:700; font-size:0.8rem;">← TORNA ALLA LISTA</a>
         <br><br>
+
         <div class="info-tag">Mondello - Palermo</div>
         <h1>Bar Le Terrazze</h1>
         <p>Lavora con una vista mozzafiato direttamente sul mare di Mondello.</p>
 
-<style>
-    .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
-        margin: 30px 0;
-    }
-    .gallery-grid a img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover; /* Taglia le foto per farle uguali */
-        border-radius: 10px;
-        transition: transform 0.3s;
-    }
-    .gallery-grid a:hover img { transform: scale(1.05); }
-</style>
+        <div class="gallery-grid">
+            <a href="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=500" data-lightbox="locale" data-title="Vista Interna">
+                <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=500" alt="Foto Locale">
+            </a>
+            <a href="https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=735" data-lightbox="locale" data-title="Terrazza">
+                <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=735" alt="Foto Locale">
+            </a>
+            <a href="https://images.unsplash.com/photo-1597290282695-edc43d0e7129?q=80&w=1175" data-lightbox="locale" data-title="Area Lounge">
+                <img src="https://images.unsplash.com/photo-1597290282695-edc43d0e7129?q=80&w=1175" alt="Foto Locale">
+            </a>
+        </div>
 
-<div class="gallery-grid">
-    <a href="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=500" data-lightbox="locale" data-title="Vista Interna">
-        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=500" alt="Foto Locale">
-    </a>
-    <a href="https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" data-lightbox="locale" data-title="Terrazza">
-        <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Foto Locale">
-    </a>
-    <a href="https://images.unsplash.com/photo-1597290282695-edc43d0e7129?q=80&w=1175&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" data-lightbox="locale" data-title="Area Lounge">
-        <img src="https://images.unsplash.com/photo-1597290282695-edc43d0e7129?q=80&w=1175&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Foto Locale">
-    </a>
-</div>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-        
         <div class="services-grid">
             <h3 style="margin-top:0; font-size:1rem; text-transform:uppercase;">Cosa include la tua prenotazione:</h3>
             <ul class="services-list">
@@ -78,14 +98,11 @@
 
         <div class="location-section">
             <h3>Dove siamo</h3>
-            <a href="https://www.google.com/maps/search/?api=1&query=Alle+Terrazze+Mondello" target="_blank" class="address-link">
+            <a href="https://maps.google.com" target="_blank" class="address-link">
                 📍 V.le Regina Elena - Mondello, Palermo
             </a>
             <div class="map-wrapper">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3115.836104847953!2d13.3283282!3d38.201088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12d98f7e34e5659b%3A0x6e8e698888796541!2sAlle%20Terrazze!5e0!3m2!1sit!2sit!4v1715000000000!5m2!1sit!2sit" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
+                <iframe src="about:blank" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
 
@@ -95,6 +112,9 @@
                 <iframe src="https://tidycal.com/w0rkee/bar-le-terrazze" style="width:100%; height:100%; border:none;"></iframe>
             </div>
         </div>
-    </div>
+
+    </div> <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+
 </body>
 </html>

@@ -20,22 +20,18 @@ function googleTranslateElementInit() {
 
 /* 3. PULIZIA LAYOUT E CAMBIO TESTO */
 document.addEventListener('DOMContentLoaded', function() {
-    var observer = new MutationObserver(function(mutations) {
-        // Rimuove la barra superiore
+    var observer = new MutationObserver(function() {
+        // 1. Forza la rimozione del banner di Google
         var banner = document.querySelector('.goog-te-banner-frame');
-        if (banner) banner.style.display = 'none';
-        
-        // Blocca il salto del sito verso il basso
-        if (document.body.style.top !== '0px') {
-            document.body.style.top = '0px';
-        }
+        if (banner) banner.remove();
+        document.body.style.top = '0px';
 
-        // Cambia il testo del selettore in modo diretto
-var gadgetText = document.querySelector('.goog-te-menu-value span:first-child');
-if (gadgetText) {
-    gadgetText.innerText = '🌐 LANGUAGE'; 
-}
+        // 2. Cerca TUTTI gli span dentro il widget e forza il testo
+        var spans = document.querySelectorAll('.goog-te-menu-value span');
+        if (spans.length > 0) {
+            spans[0].textContent = '🌐 LANGUAGE'; // Cambia il testo principale
+        }
     });
 
-    observer.observe(document.body, { childList: true, subtree: true, attributes: true });
+    observer.observe(document.body, { childList: true, subtree: true });
 });

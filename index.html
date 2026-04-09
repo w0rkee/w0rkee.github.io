@@ -1,17 +1,20 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="it">
-<head>
+
+ <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>wOrkee | Nomad Work</title>
-    <style>
+
+  <title>wOrkee | Nomad Work</title>
+
+ <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-        
+      
         :root { --ottanio: #006B6B; }
         body, html { margin: 0; padding: 0; font-family: 'Montserrat', sans-serif; background-color: #f4f4f4; scroll-behavior: smooth; }
 
         /* HERO SECTION */
-
         .hero {
             width: 100vw; 
             height: 100vh; 
@@ -24,9 +27,7 @@
             overflow: hidden;
         }
 
-
         /* OVERLAY POSIZIONATO IN ALTO */
-
         .overlay {
             position: absolute;
             top: 2%; 
@@ -47,13 +48,11 @@
             position: relative;
         }
 
-
         /* SCRITTA AD ARCO */
         .nomad-svg {
             overflow: visible;
             margin-bottom: -20px; 
         }
-
         .nomad-text {
             fill: white;
             font-weight: 700;
@@ -67,115 +66,63 @@
             font-size: clamp(3rem, 10vw, 4.5rem);
             font-weight: 700;
             color: white;
-
             letter-spacing: -2px;
-
             line-height: 1;
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
         }
 
 
         /* PIN ICONA PULITA */
-
         .pin-icon-container {
-
             display: inline-block;
-
             width: 0.8em;  
-
             height: 0.8em; 
-
             background-color: white;
-
             margin: 0 0.05em;
-
             position: relative;
-
             border-radius: 50% 50% 50% 0;
-
             transform: rotate(-45deg);
-
             top: 0.05em; 
-
         }
-
-
         .pin-icon-container::after {
-
             content: '';
-
             position: absolute;
-
             width: 35%;
-
             height: 35%;
-
             background-color: #0b4c4c; 
-
             border-radius: 50%;
-
             top: 50%;
-
             left: 50%;
-
             transform: translate(-50%, -50%) rotate(45deg);
-
         }
-
-
         h1 { 
-
             color: white; 
-
             font-size: clamp(1rem, 3vw, 1.5rem); 
-
             margin-bottom: 25px; 
-
             text-transform: uppercase; 
-
             opacity: 0.9; 
-
             letter-spacing: 2px;
-
         }
-
 
         /* MENU NAVIGAZIONE HERO */
-
         .menu-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
-
         .btn-nav { border: 2px solid white; padding: 12px; color: white; text-decoration: none; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; transition: 0.3s; }
-
         .btn-nav:hover { background: white; color: var(--ottanio); }
 
-
         /* GRIGLIA LOCALI */
-
         .grid-section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
-
         .grid-title { color: var(--ottanio); text-align: center; margin-bottom: 40px; text-transform: uppercase; }
-
         .locali-grid { 
-
             display: grid; 
-
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-
             gap: 30px; 
-
         }
-
         .locale-card {
             background: white; border-radius: 10px; overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s;
         }
-
         .locale-card:hover { transform: translateY(-10px); }
         .locale-img { width: 100%; height: 200px; background-color: #ccc; background-size: cover; background-position: center; }
         .locale-info { padding: 20px; text-align: left; }
@@ -185,13 +132,12 @@
             display: inline-block; padding: 10px 20px; background: var(--ottanio);
             color: white; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.8rem;
         }
-
         @media (max-width: 700px) { 
             .menu-grid { grid-template-columns: 1fr 1fr; } 
             .overlay { top: 5%; }
         }
 
-/* transate Contenitore principale posizionato sopra l'immagine */
+/* translate Contenitore principale posizionato sopra l'immagine */
 #google_translate_element {
     position: absolute;
     top: 20px;
@@ -318,43 +264,28 @@ body {
                 <a href="#" class="btn-info">ESPLORA L'AMBIENTE</a>
             </div>
         </div>
-
-
     </div>
 </div>
 
-<div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 600px; background: rgba(0, 107, 107, 0.95); color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; display: none; text-align: center; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
+
+ <div id="cookie-banner" style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 600px; background: rgba(0, 107, 107, 0.95); color: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9999; display: none; text-align: center; border: 1px solid rgba(255,255,255,0.2); backdrop-filter: blur(10px);">
     <p style="margin: 0 0 15px 0; font-size: 14px; line-height: 1.5;">
         Utilizziamo i cookie per migliorare la tua esperienza e per le prenotazioni. Continuando a navigare, accetti la nostra privacy policy.
     </p>
-
     <button onclick="acceptCookies()" style="background: white; color: #006b6b; border: none; padding: 10px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; text-transform: uppercase; transition: 0.3s;">Accetto</button>
 </div>
 
-
 <script>
-
     // cookie: Funzione per mostrare il banner se non è già stato accettato
-
     window.onload = function() {
-
         if (!localStorage.getItem('w0rkee_cookies_accepted')) {
-
             document.getElementById('cookie-banner').style.display = 'block';
-
         }
-
     }
-
-
     // cookie: Funzione per nascondere il banner e salvare la scelta
-
     function acceptCookies() {
-
         localStorage.setItem('w0rkee_cookies_accepted', 'true');
-
         document.getElementById('cookie-banner').style.display = 'none';
-
     }
 
 </script>
